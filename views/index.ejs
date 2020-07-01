@@ -1,0 +1,37 @@
+<%- include('partials/header.ejs') %>
+<%- include('partials/homenavbar.ejs') %>
+
+<body>
+    <div class="container">
+        <hr>
+        <div class="jumbotron">
+            <h1 class="display-4">Bem vindos ao GuiaPress!</h1>
+            <p class="lead">É um simples blog feito pelo Lics Software.</p>
+            <hr class="my-4">
+            <p>Descrição detalhada aqui</p>
+            <p class="lead">
+                <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+            </p>
+        </div>
+        <hr>
+        <% articles.forEach(article =>{ %>
+        <div class="card">
+            <div class="card-header">
+                <h2><%= article.title %> </h2>
+            </div>
+            <div class="card-body">
+                <a href="/<%= article.slug %>" class="btn btn-success">Ler artigo</a>
+            </div>
+        </div>
+        <br>
+        <% }) %>
+        <div class="row">
+            <div class="col col-12">
+                <a href="/articles/page/2" style="float: right;">Next >>></a>
+            </div>
+        </div>
+        <hr>
+    </div>
+</body>
+
+<%- include('partials/footer.ejs') %>
